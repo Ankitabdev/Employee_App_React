@@ -6,29 +6,48 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import AllInclusiveRoundedIcon from '@mui/icons-material/AllInclusiveRounded';
+import Box from '@mui/material/Box';
+import Chip from '@mui/material/Chip';
+import Stack from '@mui/material/Stack';
+
 
 export default function ImgMediaCard() {
   return (
-    <Card sx={{ maxWidth: 345, margin: 10 }}>
+    <Card sx={{ maxWidth: 345, padding: 6 }}>
+<Box>
+
       <CardMedia
+        sx={{ height: 250,width: 250, BackgroundSize: "contain", margin:"auto", justifyContent: "center"}}
         component="img"
         alt="green iguana"
         height="140"
-        image="contemplative-reptile.jpg"
+        image="profile1.png"
       />
+      
+</Box>
+       
+      
       <AllInclusiveRoundedIcon />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Lizard
+          Ankita Borawake
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+          UX/UI Design
         </Typography>
+
+       <Stack direction="row" spacing={1} sx={{margin: 2}}>
+       <Chip label="Figma" />
+       <Chip label="Adobe XD" />
+       <Chip label="Sketch" />
+       </Stack>
+
       </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+      <CardActions sx={{justifyContent:"center"}}>
+      <Stack direction="row" spacing={1}>
+      <Chip label="Active" />
+      <Chip label="Hours: 20" variant="outlined" />
+      </Stack>
       </CardActions>
     </Card>
   );

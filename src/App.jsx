@@ -17,10 +17,6 @@ function App() {
 
   <Container fixed>
      <MediaCard /> 
-     <MediaCard />
-     <MediaCard />
-     <MediaCard />
-     <MediaCard />
   </Container>
    
       
