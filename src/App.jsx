@@ -14,6 +14,7 @@ function App() {
 
   return (
     
+
   <Container fixed>
      <MediaCard /> 
      <MediaCard />
