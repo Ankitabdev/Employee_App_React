@@ -21,7 +21,7 @@ export default function ImgMediaCard() {
         component="img"
         alt="green iguana"
         height="140"
-        image="profile1.png"
+        image="/Employee_App_React/profile1.png"
       />
       
 </Box>
