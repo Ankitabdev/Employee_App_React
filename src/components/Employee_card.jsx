@@ -11,44 +11,60 @@ import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 
 
-export default function ImgMediaCard() {
+
+
+export default function ImgMediaCard({data}) {
+ /*console.log(data);*/ 
   return (
-    <Card sx={{ maxWidth: 345, padding: 6 }}>
-<Box>
+    <>
+    {data.map((item,index) => (
+
+        <Card sx={{ maxWidth: 345, padding: 6, margin:6 }}>
+        <Box>
 
       <CardMedia
         sx={{ height: 250,width: 250, BackgroundSize: "contain", margin:"auto", justifyContent: "center"}}
         component="img"
         alt="green iguana"
         height="140"
-        image="/Employee_App_React/profile1.png"
+        image={`/Employee_App_React/${item.image}`}
       />
       
-</Box>
+          </Box>
        
       
       <AllInclusiveRoundedIcon />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Ankita Borawake
+         {item.firstName} {item.lastName}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          UX/UI Design
+        {item.position}
         </Typography>
 
-       <Stack direction="row" spacing={1} sx={{margin: 2}}>
-       <Chip label="Figma" />
-       <Chip label="Adobe XD" />
-       <Chip label="Sketch" />
+
+       <Stack>
+        {item.skills.map((skill,skillIndex) => (
+        <Chip key={skillIndex}
+              label= {skill}
+              sx={{marginTop:"10px", justifyContent: "center"}}
+              variant="outlined"
+        />
+       ))}
+
        </Stack>
 
       </CardContent>
       <CardActions sx={{justifyContent:"center"}}>
       <Stack direction="row" spacing={1}>
-      <Chip label="Active" />
-      <Chip label="Hours: 20" variant="outlined" />
+      <Chip label={item.onLeave ? "Inactive" : "Active"} variant={item.onLeave ?"outlined":""}/>
+      <Chip label={`Hours: ${item.hoursLoggedThisWeek}`}
+            variant="outlined" />
       </Stack>
       </CardActions>
     </Card>
+      
+  ))}
+    </>
   );
 }
